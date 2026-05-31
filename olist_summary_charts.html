@@ -1,0 +1,213 @@
+
+<h2 class="sr-only">Olist E-Commerce summary — three charts covering Phase 2 revenue and categories, Phase 3 RFM customer segments, and Phase 4 delivery impact and review scores.</h2>
+
+<style>
+.section{margin:0 0 2rem}
+.sh{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-secondary);margin:0 0 12px}
+.krow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.km{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
+.kv{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.kl{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px}
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:12px;color:var(--color-text-secondary)}
+.ls{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:4px;vertical-align:middle}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.5rem 0}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.seg{border-radius:var(--border-radius-md);padding:10px 12px;border:0.5px solid var(--color-border-tertiary)}
+.seg-name{font-size:12px;font-weight:500;margin-bottom:4px}
+.seg-stat{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.seg-bar{height:4px;border-radius:2px;margin-top:6px;background:var(--color-background-secondary)}
+.seg-fill{height:4px;border-radius:2px}
+</style>
+
+<div style="padding:4px 0 8px">
+
+<!-- ══ PHASE 2 ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="sh">Phase 2 — Revenue & sales</div>
+  <div class="krow">
+    <div class="km"><div class="kv">R$15.4M</div><div class="kl">Total revenue · 96k orders</div></div>
+    <div class="km"><div class="kv">22% YoY</div><div class="kl">2017 → 2018 growth</div></div>
+    <div class="km"><div class="kv">R$1.15M</div><div class="kl">Peak — Nov 2017 (Black Friday)</div></div>
+    <div class="km"><div class="kv">Monday</div><div class="kl">Top sales day — 32% above Saturday</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="sh">Monthly revenue</div>
+      <div class="leg">
+        <span><span class="ls" style="background:#1D9E75"></span>R$1M+ month</span>
+        <span><span class="ls" style="background:#378ADD"></span>Growing</span>
+      </div>
+      <div style="position:relative;width:100%;height:180px">
+        <canvas id="c1" role="img" aria-label="Monthly revenue bar chart Jan 2017 to Aug 2018. Peaks at R$1.15M in November 2017, then stays above R$1M from Jan 2018 onward.">Revenue grew from R$128k in Jan 2017 to over R$1M monthly from late 2017.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sh">Top categories by revenue</div>
+      <div style="position:relative;width:100%;height:220px">
+        <canvas id="c2" role="img" aria-label="Horizontal bar chart of top 8 categories. Health beauty leads at R$1.41M, followed by watches gifts at R$1.26M.">Health beauty R$1.41M, watches gifts R$1.26M, bed bath R$1.22M, sports R$1.12M.</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══ PHASE 3 ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="sh">Phase 3 — RFM customer segmentation · 93,358 customers</div>
+  <div class="krow">
+    <div class="km"><div class="kv">97%</div><div class="kl">Single-purchase customers</div></div>
+    <div class="km"><div class="kv">R$6.15M</div><div class="kl">Revenue at risk (churned)</div></div>
+    <div class="km"><div class="kv">R$312</div><div class="kl">Champions avg spend</div></div>
+    <div class="km"><div class="kv">53.5%</div><div class="kl">Top 20% drive revenue</div></div>
+  </div>
+  <div class="seg-grid" id="segGrid"></div>
+  <div class="card">
+    <div class="sh">Customers vs revenue share by segment</div>
+    <div class="leg" id="segLeg"></div>
+    <div style="position:relative;width:100%;height:200px">
+      <canvas id="c3" role="img" aria-label="Grouped bar chart comparing customer share versus revenue share per segment. Champions have 7% of customers but 13.1% of revenue.">Champions: 7% customers, 13.1% revenue. At risk: 14.1% customers, 20.8% revenue.</canvas>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══ PHASE 4 ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="sh">Phase 4 — Reviews & churn</div>
+  <div class="krow">
+    <div class="km"><div class="kv">1.83 pts</div><div class="kl">Score drop from late delivery</div></div>
+    <div class="km"><div class="kv">9.8%</div><div class="kl">1-star review rate</div></div>
+    <div class="km"><div class="kv">R$1.72M</div><div class="kl">Lost to bad-experience churn</div></div>
+    <div class="km"><div class="kv">r=−0.267</div><div class="kl">Delay vs score · p&lt;0.0001</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="sh">Review score by delivery timing</div>
+      <div style="position:relative;width:100%;height:200px">
+        <canvas id="c4" role="img" aria-label="Bar chart showing review scores collapsing once late. On time: 4.30 stars. Late 1-7 days: 3.30 stars. Late 8-15 days: 1.71 stars. Very late: 1.72 stars.">Scores drop sharply once delivery is late — from 4.30 on time to 1.71 when 8-15 days late.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sh">Worst 1-star categories &amp; repeat rate by score</div>
+      <div class="leg">
+        <span><span class="ls" style="background:#E24B4A"></span>1-star rate</span>
+        <span><span class="ls" style="background:#378ADD;border-radius:50%"></span>Repeat rate</span>
+      </div>
+      <div style="position:relative;width:100%;height:200px">
+        <canvas id="c5" role="img" aria-label="Left bars show 1-star rates by category, highest being office furniture at 17%. Right line shows repeat purchase rate by review score is nearly flat at 5.6 to 6.5 percent.">Office furniture 17% one-star. Repeat rate barely differs by score: 5.6% for 1-star vs 6.5% for 5-star.</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme:dark)').matches;
+const grid   = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
+const tick   = isDark ? '#888' : '#666';
+const base   = {responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+  scales:{x:{ticks:{color:tick,font:{size:10}},grid:{color:grid}},
+          y:{ticks:{color:tick,font:{size:10}},grid:{color:grid}}}};
+
+// ── C1: Monthly revenue
+const months = ['Jan 17','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',
+                 'Jan 18','Feb','Mar','Apr','May','Jun','Jul','Aug'];
+const rev    = [128,271,414,391,567,490,566,646,701,751,1154,843,1079,967,1121,1133,1129,1012,1028,985];
+new Chart(document.getElementById('c1'),{type:'bar',
+  data:{labels:months, datasets:[{data:rev,
+    backgroundColor:rev.map(v=>v>=1000?'#1D9E75':'#378ADD'),borderRadius:2}]},
+  options:{...base,
+    scales:{x:{ticks:{color:tick,font:{size:8},autoSkip:false,maxRotation:45},grid:{color:grid}},
+            y:{ticks:{color:tick,font:{size:9},callback:v=>'R$'+v+'k'},grid:{color:grid}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'R$'+c.raw+'k'}}}}
+});
+
+// ── C2: Top categories
+const cats  = ['Health beauty','Watches gifts','Bed bath','Sports','Computers','Furniture','Housewares','Cool stuff'];
+const cRevs = [1411,1262,1224,1119,1031,884,761,693];
+const catColors = ['#1D9E75','#1D9E75','#378ADD','#378ADD','#378ADD','#EF9F27','#EF9F27','#EF9F27'];
+new Chart(document.getElementById('c2'),{type:'bar',
+  data:{labels:cats, datasets:[{data:cRevs, backgroundColor:catColors, borderRadius:2}]},
+  options:{...base, indexAxis:'y',
+    scales:{x:{ticks:{color:tick,font:{size:9},callback:v=>'R$'+v+'k'},grid:{color:grid}},
+            y:{ticks:{color:tick,font:{size:9}},grid:{display:false}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'R$'+c.raw+'k'}}}}
+});
+
+// ── C3: Segment customers vs revenue
+const segs=[
+  {name:'At risk',   cust:14.1, rev:20.8, c:'#E24B4A'},
+  {name:'Loyal',     cust:15.2, rev:19.1, c:'#378ADD'},
+  {name:'New',       cust:16.1, rev:15.9, c:'#9B79D4'},
+  {name:'Champions', cust:7.0,  rev:13.1, c:'#1D9E75'},
+  {name:'Hibernating',cust:15.3,rev:13.0, c:'#888780'},
+  {name:'Promising', cust:7.9,  rev:7.4,  c:'#EF9F27'},
+  {name:'Need attn', cust:14.0, rev:4.6,  c:'#F97316'},
+  {name:'Lost',      cust:4.1,  rev:4.0,  c:'#7F1D1D'},
+];
+
+// Build seg cards
+const sg = document.getElementById('segGrid');
+segs.forEach(({name,cust,rev,c})=>{
+  sg.innerHTML+=`<div class="seg">
+    <div class="seg-name" style="color:${c}">${name}</div>
+    <div class="seg-stat">${rev}% revenue<br>${cust}% customers</div>
+    <div class="seg-bar"><div class="seg-fill" style="width:${rev/20.8*100}%;background:${c}"></div></div>
+  </div>`;
+});
+
+// Legend for c3
+const sl=document.getElementById('segLeg');
+segs.forEach(({name,c})=>{sl.innerHTML+=`<span><span class="ls" style="background:${c}"></span>${name}</span>`;});
+
+new Chart(document.getElementById('c3'),{type:'bar',
+  data:{labels:segs.map(s=>s.name),
+    datasets:[
+      {label:'% customers', data:segs.map(s=>s.cust), backgroundColor:'rgba(55,138,221,0.45)', borderRadius:2},
+      {label:'% revenue',   data:segs.map(s=>s.rev),  backgroundColor:segs.map(s=>s.c+'cc'),   borderRadius:2},
+    ]},
+  options:{...base,
+    scales:{x:{ticks:{color:tick,font:{size:9},maxRotation:20},grid:{color:grid}},
+            y:{ticks:{color:tick,font:{size:9},callback:v=>v+'%'},grid:{color:grid}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+'%'}}}}
+});
+
+// ── C4: Delivery cliff
+const dLabels=['On time','Late 1-7d','Late 8-15d','Very late'];
+const dScores=[4.30,3.30,1.71,1.72];
+const dColors=['#1D9E75','#EF9F27','#E24B4A','#E24B4A'];
+new Chart(document.getElementById('c4'),{type:'bar',
+  data:{labels:dLabels, datasets:[{data:dScores, backgroundColor:dColors, borderRadius:3}]},
+  options:{...base,
+    scales:{x:{ticks:{color:tick,font:{size:10}},grid:{color:grid}},
+            y:{min:0,max:5,ticks:{color:tick,font:{size:10}},grid:{color:grid}}},
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(2)+' ★'}}}}
+});
+
+// ── C5: 1-star categories + repeat rate
+const c5cats=['Office furn.','Audio','Fixed tel.','Home comfort','Bed bath'];
+const oneStars=[17.0,16.3,13.7,13.2,11.6];
+const repeatRate=[5.6,5.7,5.9,5.5,6.5]; // by review score 1-5
+new Chart(document.getElementById('c5'),{type:'bar',
+  data:{
+    labels:['1★','2★','3★','4★','5★'],
+    datasets:[
+      {type:'bar',   label:'1-star rate by category (top 5)', data:[17.0,16.3,13.7,13.2,11.6], backgroundColor:'rgba(226,75,74,0.6)', borderRadius:2, yAxisID:'y'},
+      {type:'line',  label:'Repeat purchase rate by score',   data:repeatRate, borderColor:'#378ADD', backgroundColor:'transparent', pointRadius:5, pointBackgroundColor:'#378ADD', tension:0.3, yAxisID:'y2'},
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{
+      x:{ticks:{color:tick,font:{size:10}},grid:{color:grid}},
+      y:{title:{display:true,text:'1-star rate %',color:tick,font:{size:9}},ticks:{color:tick,font:{size:9},callback:v=>v+'%'},grid:{color:grid},min:0,max:22},
+      y2:{position:'right',title:{display:true,text:'Repeat rate %',color:'#378ADD',font:{size:9}},ticks:{color:'#378ADD',font:{size:9},callback:v=>v+'%'},grid:{display:false},min:4,max:8}
+    },
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+'%'}}}}
+});
+</script>
