@@ -146,7 +146,9 @@ Built by **Puru Tiwari**
 Data Analyst | Data Engineer & AI Enthusiast | Open to Work
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/puru-tiwari-314aab135/)
-Available for freelance work : fiverr.com/puru1304
+
+Available for freelance work : [Fiverr](fiverr.com/puru1304)
+
 Also see my FIFA World Cup Data Intelligence project: [GitHub](https://github.com/prabhat202601-cloud/FIFA-WorldCup-Data-Intelligence)
 
 ---
